@@ -32,12 +32,12 @@ int similar (char *s, char *t, int n) {
 }
 
 int is_substring(const char* a, const char* b) {
-    // Check if b is a substring of a
+    
     if (strstr(a, b) != NULL) {
-        // b is a substring of a
+        
         return 1;
     } else {
-        // b is not a substring of a
+        
         return 0;
     }
 }
@@ -66,7 +66,7 @@ int getword(char w[]){
     bzero(w,WORD);
     for(int i=0;i<WORD;i++){
         char c= getc(stdin);
-        if(c=='\0'|| c==EOF){
+        if(i==WORD-1||c=='\0'|| c==EOF){
             return 0;
         }
         if(c==' '||c=='\t'||c=='\n'){
