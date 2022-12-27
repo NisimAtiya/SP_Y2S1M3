@@ -43,9 +43,10 @@ int is_substring(const char* a, const char* b) {
 }
 int getlinee(char s[]){
     bzero(s,LINE);
+    char c;
     for (int i = 0; i < LINE; ++i) {
-        char c=getc(stdin);
-        if(c=='\0'||c==EOF){
+        c=getc(stdin);
+        if(i==LINE-1||c=='\0'||c==EOF){
             return 0;
         }
         if(c=='\n'){
@@ -78,6 +79,7 @@ int getword(char w[]){
 void print_lines(char * str){
     char line[LINE]={'\0'};
     while(getlinee(line)!=0){
+    	
         if(is_substring(line,str)==1){
             printf("%s\n",line);
         }
@@ -98,9 +100,11 @@ int main(){
     getword(target);
     char ab = getc(stdin);
     if(ab=='a'){
+        ab=getc(stdin);
         print_lines(target);
     }
     if(ab=='b'){
+        getc(stdin);
         print_similar_words(target);
     }
     return 0;
