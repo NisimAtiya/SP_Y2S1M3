@@ -24,7 +24,7 @@ void print_arr(int arr[],int n){
     for (int i = 0; i < n-1; ++i) {
         printf("%d,",*(arr+i));
     }
-    printf("%d",*(arr+n-1));
+    printf("%d\n",*(arr+n-1));
 }
 
 int main(){
